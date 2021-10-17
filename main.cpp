@@ -45,7 +45,7 @@ public:
                                                                activity(activity){}
     Student(){}
 
-    T getNameOfStudent() const {
+    T getStudentName() const {
         return studentName;
     }
     T getId() const {
@@ -60,26 +60,21 @@ public:
     T getActivity() const {
         return activity;
     }
-    void setNameOfStudent(T nameOfStudent) {
-        Student::studentName = nameOfStudent;
+    void setStudentName(T studentName) {
+        Student::studentName = studentName;
     }
-
     void setId(T id) {
         id = id;
     }
-
     void setAge(T age) {
         Student::age = age;
     }
-
     void setCourse(T course) {
         course = course;
     }
-
     void setActivity(T activity) {
         activity = activity;
     }
-
     bool operator==(const string other){
         return this->studentName == other;
     }
@@ -89,7 +84,7 @@ void setDefault(Student<string> &student){
     student.setAge("Unknown");
     student.setCourse("Unknown");
     student.setId("Unknown");
-    student.setNameOfStudent("Unknown");
+    student.setStudentName("Unknown");
 }
 
 int main() {
