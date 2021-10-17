@@ -18,13 +18,10 @@ private:
     T activity;
 
     friend ostream &operator<<( ostream &output, const Student<T> &student ) {
-        cout << "Name" << "\t\t" << "ID" << "\t\t" << "Age" << "\t\t" << "Courses" << "\t\t" << "Activities" <<endl;
-        cout << "---------------------------------------------------------------------------" << endl;
         output << student.studentName << "\t\t" << student.id << "\t\t" << student.age << "\t\t" << student.course << "\t\t" << student.activity << endl;
         return output;
     }
-
-    friend istream &operator>>( istream &input, Student<T> &student ) {
+    friend istream &operator>>(istream &input, Student<T> &student) {
         input >> student.studentName >> student.id >> student.age >> student.course >> student.activity;
         return input;
     }
@@ -89,11 +86,10 @@ void setDefault(Student<string> &student){
 
 int main() {
     vector <Student<string>> student_objects[15];
-    for (int i=0; i<6; i++) {
-        student_objects->push_back(Student<string>("Manat", "00159", "18", "C++", "ACM"));
-        student_objects->push_back(Student<string>("Yerasyl", "00923", "19", "Java", "IEEE"));
-        student_objects->push_back(Student<string>("Abdulla", "00681", "19", "Python", "IEEE"));
-    }
+
+    student_objects->push_back(Student<string>("Manat", "00159", "18", "C++", "ACM"));
+    student_objects->push_back(Student<string>("Yerasyl", "00923", "19", "Java", "IEEE"));
+    student_objects->push_back(Student<string>("Abdulla", "00681", "19", "Python", "IEEE"));
     /*====================================================================================================================================
      *====================================================================================================================================
      *====================================================================================================================================
@@ -101,6 +97,9 @@ int main() {
     Student<string> tempStudent;
     cin>>tempStudent;
     student_objects->push_back(tempStudent);
+
+    cout << "Name" << "\t\t" << "ID" << "\t\t" << "Age" << "\t\t" << "Courses" << "\t\t" << "Activities" <<endl;
+    cout << "---------------------------------------------------------------------------" << endl;
 
     for (int i=0; i<13; i++){
         cout << student_objects->at(i)<<endl;
