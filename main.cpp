@@ -18,7 +18,7 @@ private:
     T activity;
 
     friend ostream &operator<<( ostream &output, const Student<T> &student ) {
-        output << student.studentName << "\t\t" << student.id << "\t\t" << student.age << "\t\t" << student.course << "\t\t" << student.activity << endl;
+        output << student.studentName << "\t\t" << student.id << "\t\t" << student.age << "\t\t" << student.course << "\t\t" << student.activity;// << endl;
         return output;
     }
     friend istream &operator>>(istream &input, Student<T> &student) {
@@ -109,6 +109,6 @@ int main() {
     for (int i=0; i<2; i++){
         cout << student_objects->at(i)<<endl;
     }
-
+    return 0;
 }
 
